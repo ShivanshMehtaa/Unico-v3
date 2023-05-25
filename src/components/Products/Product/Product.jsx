@@ -3,7 +3,8 @@ import prod from "../../../assets/products/earbuds-prod-1.webp";
 import { FaCartPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Product = () => {
+const Product = ({name , price}) => {
+  console.log(name ,price)
   return (
     <div className="product-card">
       <Link className="link" to="product/1">
@@ -15,8 +16,8 @@ const Product = () => {
         </div>
 
         <div className="product-details">
-          <span className="name">Product Name</span>
-          <span className="price">₹ Product Price</span>
+          <span className="name">{name}</span>
+          <span className="price">{price}</span>
           <div className="cart-buttons">
             <button className="add-to-cart-button">
               <FaCartPlus size={20} />

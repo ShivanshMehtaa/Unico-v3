@@ -57,9 +57,11 @@ const SingleProduct = () => {
                     </div>
                 </div>
             </div>
-            <RelatedProducts/>
+            {/* <RelatedProducts/> */}
         </div>
     </div>;
 };
 
 export default SingleProduct;
+
+

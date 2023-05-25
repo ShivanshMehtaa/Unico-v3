@@ -10,9 +10,7 @@ const Second = () => {
       <div className="main-content">
         <div className="layout">
             <Category/>
-            <Products2 />
-            <Products2 />
-            <Products2 />
+            
         </div>
       </div>
       <Newsletter/>

@@ -4,11 +4,17 @@
     width: 100%;
     padding: 0 20px;
     z-index: 99;
-    background-color: blueviolet;
+    background-color: #fb08e7;
     color: white;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     @include md {
         padding: 0 40px;
+    }
+    @include sm{
+        background-color: cyan;
+    }
+    @include lg{
+        background-color:blueviolet;
     }
     .header-content {
         display: flex;
@@ -33,7 +39,6 @@
             font-weight: 600;
             text-transform: uppercase;
             cursor: pointer;
-            
             &:hover {
                 opacity: 0.6;
             }
@@ -92,13 +97,19 @@
         }
     }
     &.sticky-header {
-        background-color: blueviolet;
+        background-color: #fb08e7;
         color: white;
         position: sticky;
         top: 0;
         transform: translateY(-60px);
         animation: StickyHeader 0.3s ease forwards;
 
+        @include sm{
+            background-color: cyan;
+        }
+        @include lg{
+            background-color: blueviolet;
+        }
     }
 }
 
