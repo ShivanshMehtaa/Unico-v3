@@ -1,0 +1,28 @@
+@import "../../../css-config/mixins.scss";
+.by-category {
+    margin: 25px 0;
+    // background: url("../../../assets/newsletter-bg.jpeg");
+    @include md {
+        margin: 50px 50px;
+    }
+    .categories {
+        display: flex;
+        flex-flow: wrap;
+        gap: 10px;
+        
+        .category {
+            background-color: black;
+            width: calc(50% - 5px);
+            cursor: pointer;
+            overflow: hidden;
+            @include md {
+                width: calc(33% - 10px);
+            }
+            img {
+                width: 100%;
+                display: block;
+                transition: all ease 0.3s;
+            }
+        }
+    }
+}

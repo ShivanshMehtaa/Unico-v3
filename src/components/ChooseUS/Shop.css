@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.choose-container {
+    width: 100%;
+    height: 100vh;
+    padding: 0 8%;
+}
+
+.choose-container h1 {
+    text-align: center;
+    padding-top: 5%;
+    margin-bottom: 60px;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+}
+
+
+.choose-container .ctas {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choose-container .ctas .banner-cta {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    width: fit-content;
+    border: 2px solid white;
+    padding: 10px 20px;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    background-color: rgb(253, 6, 228);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+.choose-container .ctas .banner-cta:hover {
+    background-color: white;
+    color:rgb(250, 3, 44) ;
+    border: 2px solid rgb(250, 3, 44) ;
+}

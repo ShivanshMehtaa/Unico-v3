@@ -1,0 +1,39 @@
+@import "../../../css-config/mixins.scss";
+.shop-category {
+    margin: 25px 0;
+    // background: url("../../../assets/newsletter-bg.jpeg");
+    @include md {
+        margin: 50px 50px;
+    }
+    .categories {
+        display: flex;
+        flex-flow: wrap;
+        gap: 10px;
+        
+        .category {
+            // background-color: rgb(245, 244, 244);
+            width: calc(50% - 5px);
+            cursor: pointer;
+            overflow: hidden;
+            @include md {
+                width: calc(25% - 10px);
+            }
+            img {
+                border-radius: 35px;
+                width: 100%;
+                display: block;
+                transition: all ease 0.3s;
+            }
+
+                &:hover{
+                    img{
+                        transform: scale(1.2);
+                    }
+                }
+
+
+            
+        }
+        
+    }
+}
