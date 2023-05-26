@@ -23,7 +23,7 @@ const createProduct = asyncHandler(async (req, res) => {
       data: newProduct,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res
       .status(500)
       .send({ message: "Error creating Product", success: false, error });
@@ -43,7 +43,7 @@ const readAllProduct = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res
       .status(500)
       .send({ message: "Error fetching Product", success: false, error });
@@ -51,7 +51,7 @@ const readAllProduct = asyncHandler(async (req, res) => {
 });
 const readProductByCategory = asyncHandler(async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const categoryCheck = await Product.findOne({
       productCategory: req.body.data.productCategory,
     });
@@ -70,7 +70,7 @@ const readProductByCategory = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res
       .status(500)
       .send({ message: "Error in finding Product", success: false, error });
@@ -89,24 +89,31 @@ const updateProductStock = asyncHandler(async (req, res) => {
       {
         // productStock: req.body.data.productStock;
         const newstock = req.body.data.productStock + product.productStock;
-        console.log(newstock);
-        const update = await Product.findOneAndUpdate(
-          {
-            productId: req.body.data.productId,
-          },
-          { productStock: newstock }
-        );
-        if (!update) {
-          res.status(200).send({ message: "not Updated", success: false });
+        // console.log(newstock);
+        if (newstock < 0) {
+          res.status(200).send({
+            message: "You do not have such sufficient amount to remove",
+            success: false,
+          });
         } else {
-          res
-            .status(200)
-            .send({ message: "Updated Successfully", success: true });
+          const update = await Product.findOneAndUpdate(
+            {
+              productId: req.body.data.productId,
+            },
+            { productStock: newstock }
+          );
+          if (!update) {
+            res.status(200).send({ message: "not Updated", success: false });
+          } else {
+            res
+              .status(200)
+              .send({ message: "Updated Successfully", success: true });
+          }
         }
       }
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       message: "error in Updating product",
       success: false,

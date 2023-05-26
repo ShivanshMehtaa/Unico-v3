@@ -15,8 +15,15 @@ const checkOut = asyncHandler(async (req, res) => {
 
 const paymentVarification = asyncHandler(async (req, res) => {
   console.log(req.body);
-  res.status(200).send({ message: "verify ho gya ", success: true });
-  // .redirect("/");
+  // res.status(200).send({ message: "verify ho gya ", success: true });
+
+  const authenticate = 1;
+  if (authenticate) {
+    // res.redirect(`http://localhost:3000/paymentSuccess?reference=${razorpay_paymentID}`)
+    res.redirect(`http://localhost:3000`);
+  } else {
+    res.status(200).send({ message: "Verified succesfully" });
+  }
 });
 
 module.exports = {

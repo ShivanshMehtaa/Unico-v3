@@ -5,7 +5,7 @@ const Product = require("../models/productModel");
 
 const createCustomer = asyncHandler(async (req, res) => {
   try {
-    console.log(req.body.data);
+    // console.log(req.body.data);
     const existedCustomer = await Customer.findOne({
       CustomerId: req.body.data.CustomerId,
     });
@@ -23,7 +23,7 @@ const createCustomer = asyncHandler(async (req, res) => {
       data: newCustomer,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res
       .status(500)
       .send({ message: "Error creating Customer", success: false, error });
@@ -43,7 +43,7 @@ const readAllCustomer = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res
       .status(500)
       .send({ message: "Error in Fetching Customer", success: false, error });
@@ -51,7 +51,7 @@ const readAllCustomer = asyncHandler(async (req, res) => {
 });
 const readCustomerById = asyncHandler(async (req, res) => {
   try {
-    console.log(req.body.data);
+    // console.log(req.body.data);
     const customerCheck = await Customer.findOne({
       CustomerId: req.body.data.CustomerId,
     });
@@ -67,7 +67,7 @@ const readCustomerById = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res
       .status(500)
       .send({ message: "Error in finding Customer", success: false, error });
@@ -76,7 +76,7 @@ const readCustomerById = asyncHandler(async (req, res) => {
 const updateCustomer = asyncHandler(async (req, res) => {});
 const deleteCustomer = asyncHandler(async (req, res) => {
   try {
-    console.log(req.body.data);
+    // console.log(req.body.data);
     const customer = await Customer.findOneAndRemove({
       CustomerId: req.body.data.CustomerId,
     });
@@ -93,7 +93,7 @@ const deleteCustomer = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       message: "error deleting Customer",
       success: false,

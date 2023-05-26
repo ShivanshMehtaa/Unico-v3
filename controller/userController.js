@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 
 const createUser = asyncHandler(async (req, res) => {
   try {
-    console.log(req.body.data);
+    // console.log(req.body.data);
     const existedUser = await User.findOne({
       email: req.body.data.email,
     });
@@ -30,7 +30,7 @@ const createUser = asyncHandler(async (req, res) => {
       data: newuser,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res
       .status(500)
       .send({ message: "Error creating user", success: false, error });
@@ -47,7 +47,7 @@ const login = asyncHandler(async (req, res) => {
     }
     var identity = "";
     if (user.isAdmin) {
-      // console.log("hn hn me admin nhi hu");
+      console.log("hn hn me admin nhi hu");
       identity = "admin";
     }
     const isMatch = await bcrypt.compare(req.body.data.password, user.password);
@@ -68,7 +68,7 @@ const login = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res
       .status(500)
       .send({ message: "Error logging in", success: false, error });
@@ -88,7 +88,7 @@ const readAllUser = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res
       .status(500)
       .send({ message: "Error in Fetching User", success: false, error });
@@ -96,7 +96,7 @@ const readAllUser = asyncHandler(async (req, res) => {
 });
 const readUserById = asyncHandler(async (req, res) => {
   try {
-    console.log(req.body.data);
+    // console.log(req.body.data);
     const user = await User.findOne({
       userId: req.body.data.userId,
     });
@@ -112,7 +112,7 @@ const readUserById = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return res
       .status(500)
       .send({ message: "Error in finding User", success: false, error });
@@ -122,7 +122,7 @@ const updateUser = asyncHandler(async (req, res) => {});
 
 const deleteUser = asyncHandler(async (req, res) => {
   try {
-    console.log(req.body.data);
+    // console.log(req.body.data);
     const user = await User.findOneAndRemove({
       UserId: req.body.data.UserId,
     });
@@ -139,7 +139,7 @@ const deleteUser = asyncHandler(async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({
       message: "error deleting User",
       success: false,
