@@ -3,8 +3,9 @@ import { BsCartX } from "react-icons/bs";
 import CartItem from "./CartItem/CartItem"
 
 import "./Cart.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Cart = ({setShowCart}) => {
+    const Navigate = useNavigate();
     return (
     <div className="cart-panel">
         <div className="opac-layer"></div>
@@ -31,7 +32,7 @@ const Cart = ({setShowCart}) => {
                         <span className="totaltext total">₹ Total Price</span>
                     </div>
                     <div className="button">
-                        <button className="checkout-cta">CheckOut</button>
+                        <button className="checkout-cta" onClick={()=>{Navigate('/checkOut')}}>CheckOut</button>
                     </div>
                 </div>
             </>

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Login = () => {
 
@@ -54,7 +55,7 @@ const Login = () => {
 
   return (
     <div className="addjobbody">
-       {/* <Header /> */}
+       <Header />
       <div className="addjobwrapper">
         <div className="title">Login</div>
         <div className="form">
@@ -72,6 +73,7 @@ const Login = () => {
         </div>
         <span className="name"><Link className="link" to="/signup">Create Account</Link></span>
       </div>
+      <Footer/>
     </div>
   );
 };

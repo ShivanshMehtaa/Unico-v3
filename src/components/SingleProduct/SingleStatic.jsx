@@ -1,5 +1,4 @@
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
-import {useLocation} from 'react-router-dom';
 import {
     FaFacebookF,
     FaTwitter,
@@ -10,24 +9,18 @@ import {
 } from "react-icons/fa";
 import "./SingleProduct.scss";
 import prod from "../../assets/products/earbuds-prod-1.webp"
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
 
 const SingleProduct = () => {
-    const location = useLocation();
-    const pro = (location.state);
-    return <>
-    <Header/>
-    <div className="single-product-main-content">
+    return <div className="single-product-main-content">
         <div className="layout">
             <div className="single-product-page">
                 <div className="left">
                     <img src={prod} alt="" />
                 </div>
                 <div className="right">
-                    <span className="name">{pro.productName}</span>
-                    <span className="price">{pro.price}</span>
-                    <span className="description">{pro.productDescription}</span>
+                    <span className="name">Product Name</span>
+                    <span className="price">Product Price</span>
+                    <span className="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus dicta asperiores cupiditate magni repellendus, laudantium perferendis quae aliquam praesentium assumenda dignissimos alias nisi exercitationem similique quisquam? Natus culpa et consequuntur architecto atque amet reprehenderit placeat mollitia exercitationem illum, maxime repellat?</span>
 
                     <div className="cart-buttons">
                         <button className="add-to-cart-button">
@@ -41,17 +34,14 @@ const SingleProduct = () => {
                     <div className="info-item">
                         
                         <span className="text-bold">Ingredients :
+                            <span> Sample List of Ingredients </span>
                             <br />
-                            <span> {pro.ingredents} </span>
-                            <br />
-                            
+                            <span> Sample List of Ingredients 2 </span>
                         </span>
                         <span className="text-bold">Additional Information :
-                            <span> {`ShelfLife : ${pro.shelfLife}`}</span>
+                            <span> Info 1</span>
                             <br />
-                            <span>{`ProductWeight : ${pro.productWeight}`}</span>
-                            <br />
-                            <span>{`ProductStock : ${pro.productStock}`}</span>
+                            <span> Info 2</span>
                         </span>
                         <br />
                         <span className="text-bold">Share :
@@ -70,9 +60,8 @@ const SingleProduct = () => {
             {/* <RelatedProducts/> */}
         </div>
     </div>;
-    <Footer/>
-    </>
 };
 
 export default SingleProduct;
+
 

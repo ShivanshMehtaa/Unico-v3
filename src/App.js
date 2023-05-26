@@ -18,6 +18,7 @@ import User from "./components/User/User";
 import Admin from "./components/Admin-pages/Admin";
 import AllProducts from "./components/Category/AllProducts";
 import Checkout from "./components/Checkout/Checkout";
+// import SingleProduct from "./components/SingleProduct/SingleProduct";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/Millet-Bar" element={<Category3 />} />
           <Route path="/allProducts" element={<AllProducts />} />
           <Route path="/checkOut" element={<Checkout />} />
+          <Route path="/singleProduct" element={<SingleProduct />} />
         </Routes>
         {/* <Footer /> */}
       </AppContext>

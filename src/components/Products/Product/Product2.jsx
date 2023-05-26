@@ -3,10 +3,10 @@ import prod from "../../../assets/products/earbuds-prod-1.webp";
 import { FaCartPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Product = () => {
+const Product = ({li}) => {
   return (
     <div className="product-card2">
-      <Link className="link" to="product/1">
+      <Link className="link" to={li}>
         <div className="thumbnail2">
           <img
             src="https://cdn.shopify.com/s/files/1/0600/3680/8804/files/3326DF10-668E-4907-BC91-45415E0EFC64.jpg?v=1661888147&width=360"

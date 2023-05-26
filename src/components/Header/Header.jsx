@@ -70,7 +70,7 @@ const Header = () => {
                         <li><Link className="link" to="/">Home</Link></li>
             
                        <div class="dropdown">
-                            <button class="dropbtn">Categories
+                            <button class="dropbtn">Categories ⬇️
                                 <i class="fa fa-caret-down"></i>
                             </button>
                             <div class="dropdown-content font-loader">

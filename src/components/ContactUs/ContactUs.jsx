@@ -1,9 +1,11 @@
 import React from 'react'
 import "./ContactUs.css"
-
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 const ContactUs = () => {
   return (
     <div>
+		<Header/>
       <div class="contact-container">
 		<div class="contact-box">
 			<div className="contact-left">
@@ -23,6 +25,7 @@ Connect with us on WhatsApp or DM on Instagram too.</p>
 			</div>
 		</div>
 	</div>
+	<Footer/>
     </div>
   )
 }

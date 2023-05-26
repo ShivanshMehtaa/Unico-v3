@@ -11,7 +11,7 @@
     background-color: #fb08e7;
     color: white;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    font-size: 20px !important ;
+    font-size: 20px ;
     @include md {
         padding: 0 40px;
     }
@@ -54,6 +54,7 @@
             }
             .link{
                 color: white;
+                font-size: 20px;
             }
         }
         
@@ -63,18 +64,19 @@
         font-weight: 700;
         cursor: pointer;
         @include md {
-            font-size: 60px;
+            font-size: 22px;
             position: relative;
             // left: 50%;
             transform: translateX(-50%);
         }.link{
             color: white;
+            
         }
     }
 
     .linkcenter{
         color : white ;
-        font-size: 30px ;
+        font-size: 35px ;
         // position: absolute;
         text-decoration: none;
         left : 0 ;
@@ -167,13 +169,14 @@
 
 /* Dropdown button */
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     outline: none;
     color: white;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
+    font-weight: 600;
     /* Important for vertical align on mobile phones */
     margin: 0;
     /* Important for vertical align on mobile phones */

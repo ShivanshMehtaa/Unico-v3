@@ -1,8 +1,10 @@
 import React from "react";
 import './Shop.css';
 import Category3 from "../Home/Category/Category-3"
+import { useNavigate } from "react-router-dom";
 
 function Serive ()  {
+    const Navigate = useNavigate();
     return (
         <div>
             <div className="choose-container">
@@ -10,7 +12,9 @@ function Serive ()  {
                 <Category3/>
                 <div className="ctas2">
           {/* <div className="banner-cta">About</div> */}
-          <div className="banner-cta">View All</div>
+          <div className="banner-cta" onClick={()=>{
+            Navigate('/allProducts')
+          }}>View All</div>
         </div>
             </div>
         </div>

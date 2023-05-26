@@ -1,7 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./Account.css"
-
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 
 const Account = () => {
   const Navigate =  useNavigate();
@@ -21,6 +22,7 @@ const Account = () => {
   }
   return (
     <div>
+      <Header/>
       <section id="about-us">
 
         <div className="text">
@@ -49,6 +51,7 @@ const Account = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   )
 }

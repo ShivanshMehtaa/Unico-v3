@@ -5,9 +5,10 @@ import React, { useEffect, useState } from "react";
 // import "./Product.scss";
 // import prod from "../../../assets/products/earbuds-prod-1.webp";
 import { FaCartPlus } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Products = ({headingText , productCategory}) => {
     const [users, setUsers] = useState([]);
+    const Navigate = useNavigate();
     
     const allEmploye = async () => {
     try {
@@ -15,7 +16,7 @@ const Products = ({headingText , productCategory}) => {
       axios
         .get("http://localhost:8080/api/v1/admin/readAllProduct")
         .then((res) => {
-          console.log(res.data.data);
+          // console.log(res.data.data);
           var result = res.data.data;
 
           if (result.length > 0) {
@@ -31,13 +32,13 @@ const Products = ({headingText , productCategory}) => {
    const data = {
       productCategory : productCategory
     }
-    console.log(data) ;
+    // console.log(data) ;
     try {
       // console.log("hn hn chal rha hai ");
       axios
         .post("http://localhost:8080/api/v1/admin/readProductByCategory" , {data:data})
         .then((res) => {
-          console.log(res.data.data);
+          // console.log(res.data.data);
           var result = res.data.data;
 
           if (result.length > 0) {
@@ -68,18 +69,13 @@ const Products = ({headingText , productCategory}) => {
   // }, []);
 
  
-
+const clicked = (curUser)=>{
+  console.log(curUser);
+  Navigate('/singleProduct' ,{state:curUser} )
+}
 
     return <div className="products-container">
         <div className="sec-heading">{headingText}</div>
-        {/* <div className="products">
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-        </div> */}
-
-        
           <div className="products">
             {users.map((curUser) => {
               const {
@@ -89,7 +85,7 @@ const Products = ({headingText , productCategory}) => {
               return (
                 // <Product name = {productName} price ={price}/>
                 <div className="product-card">
-      <Link className="link" to="product/1">
+      <div className="link" onClick={()=>{clicked(curUser)}}>
         <div className="thumbnail">
           <img
             src="https://cdn.shopify.com/s/files/1/0600/3680/8804/files/3326DF10-668E-4907-BC91-45415E0EFC64.jpg?v=1661888147&width=360"
@@ -107,7 +103,7 @@ const Products = ({headingText , productCategory}) => {
             </button>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
               );
             })}

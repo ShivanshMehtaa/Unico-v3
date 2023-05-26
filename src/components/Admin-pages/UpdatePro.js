@@ -11,11 +11,20 @@ const UpdatePro = () => {
   const productId = useRef("");
   const productStock = useRef("");
 
-  const clickHandler = async (e) => {
-    const data = {
-      productId: productId.current.value,
-      productStock: Number(productStock.current.value),
-    };
+  const clickHandler = async (bt) => {
+    var data = {};
+    if (bt === "remove") {
+      data = {
+        productId: productId.current.value,
+        productStock: -Number(productStock.current.value),
+      };
+    } else {
+      data = {
+        productId: productId.current.value,
+        productStock: Number(productStock.current.value),
+      };
+    }
+
     console.log(data);
 
     try {
@@ -25,7 +34,8 @@ const UpdatePro = () => {
         })
         .then((res) => {
           console.log(res);
-          alert("Stock Updated SuccessFully");
+          console.log(res.data);
+          alert(res.data.message);
         });
     } catch (error) {
       console.log(error);
@@ -50,9 +60,23 @@ const UpdatePro = () => {
           </div>
 
           <div className="control-buttons">
-            <div class="inputfield" onClick={clickHandler}>
-              <input type="submit" value="Remove Product" class="btn" />
-              <input type="submit" className="btn btn2" value="Add Product" />
+            <div class="inputfield">
+              <input
+                type="submit"
+                value="Remove Product"
+                class="btn"
+                onClick={() => {
+                  clickHandler("remove");
+                }}
+              />
+              <input
+                type="submit"
+                className="btn btn2"
+                value="Add Product"
+                onClick={() => {
+                  clickHandler("add");
+                }}
+              />
             </div>
           </div>
         </div>
