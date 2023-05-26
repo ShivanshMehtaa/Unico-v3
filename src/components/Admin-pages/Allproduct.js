@@ -3,7 +3,7 @@ import "./UserTable.css";
 import Table from "./Table";
 import axios from "axios";
 
-const Allpro = () => {
+const AllProducts = () => {
   const [users, setUsers] = useState([]);
 
   const Allpro = async () => {
@@ -71,4 +71,4 @@ const Allpro = () => {
   );
 };
 
-export default Allpro;
+export default AllProducts;

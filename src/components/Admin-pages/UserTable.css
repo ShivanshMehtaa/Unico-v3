@@ -6,29 +6,32 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.maincontainer{
+
+.maincontainer {
     /* width: 50% !important */
 }
 
-.Table{
+.Table {
     /* background-color: #3f47cc; */
     /* width : 20px ; */
 }
+
 html {
     font-size: 50%;
 }
 
-.head {
-    
+.head h1 {
+    margin-top: 30px;
     text-align: center;
-    
+
 }
+
 table {
     margin: 5rem auto;
     border-radius: 2rem;
-    border: 1rem hidden #3f47cc;
+    border: 1rem hidden white;
     border-collapse: collapse;
-    box-shadow: 0 0 0 1px black;
+    box-shadow: 0 0 0 1px white;
     overflow: hidden;
     max-width: 80rem;
 }
@@ -44,14 +47,14 @@ td {
 
 .thead {
     font-size: 1.8rem;
-    background-color: #3f47cc;
+    background-color: #b274f4;
     color: #fff;
     align-items: center;
 }
 
 th,
 td {
-    border: 1px solid #3f47cc;
+    border: 1px solid white;
     min-width: 23rem;
     padding: 1.5rem;
     line-height: 3;

@@ -37,7 +37,7 @@ const Login = () => {
             // localStorage.clear();
             let u = JSON.stringify(res.data.data) ;
             localStorage.setItem("user" , JSON.stringify(u))
-            console.log(u) ;
+            console.log(localStorage.user) ;
             
             if(res.data.data.isAdmin){
               Navigate("/admin")

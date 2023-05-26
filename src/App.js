@@ -17,12 +17,13 @@ import Category3 from "./components/Category/Category3";
 import User from "./components/User/User";
 import Admin from "./components/Admin-pages/Admin";
 import AllProducts from "./components/Category/AllProducts";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
     <BrowserRouter>
       <AppContext>
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/category" element={<Second />} /> */}
@@ -38,10 +39,11 @@ function App() {
           <Route path="/user" element={<Account />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/Categories" element={<Second />} />
-          <Route path="/Millet" element={<Category1 />} />
-          <Route path="/Jaggery" element={<Category2 />} />
-          <Route path="/combo" element={<Category3 />} />
+          <Route path="/Millet-Meusli" element={<Category1 />} />
+          <Route path="/Millet-Laddo" element={<Category2 />} />
+          <Route path="/Millet-Bar" element={<Category3 />} />
           <Route path="/allProducts" element={<AllProducts />} />
+          <Route path="/checkOut" element={<Checkout />} />
         </Routes>
         {/* <Footer /> */}
       </AppContext>

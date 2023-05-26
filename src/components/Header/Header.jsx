@@ -7,6 +7,7 @@ import "./Header.scss";
 import Search from "./Search/Search";
 import { Context } from "../../utils/Context";
 import Cart from "../Cart/Cart";
+import WebFont from 'webfontloader';
 
 import "./Header.scss";
 const Header = () => {
@@ -21,14 +22,14 @@ const Header = () => {
 
         
         if((localStorage.length)===2){
-            console.log("hn hn user hai") ;
+            // console.log("hn hn user hai") ;
             setLog(true) ;
             
             setLog("user") ;
             
         }
         else{
-            console.log("nhi user nhi hai login kro") ;
+            // console.log("nhi user nhi hai login kro") ;
         }
     }
 
@@ -50,17 +51,39 @@ const Header = () => {
         getuser();
         window.addEventListener("scroll", handleScroll)
     },[]);
+    useEffect(() => {
+   WebFont.load({
+     google: {
+       families: ['Droid Sans', 'Chilanka']
+     }
+   });
+  }, []);
 
     return (
         <>
             <header className={`main-header ${scrolled ? 'sticky-header' : ' '}`}>
                 <div className="header-content">
-                    <ul className="left">
+                    <div className="center"><Link className="linkcenter" to="/">Unico Foods</Link></div>
+                    
+                    <oll className="left">
+            
                         <li><Link className="link" to="/">Home</Link></li>
-                        <li><Link className="link" to="/Categories">Categories</Link></li>
+            
+                       <div class="dropdown">
+                            <button class="dropbtn">Categories
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content font-loader">
+                                <li><Link className="linkd" to="/allProducts">allProducts</Link></li>
+                                <li><Link className="linkd" to="/Millet-Meusli">Millet-Meusli</Link></li>
+                                <li><Link className="linkd" to="/Millet-Laddo">Millet-Laddo</Link></li>
+                                <li><Link className="linkd" to="/Millet-Bar">Millet-Bar</Link></li>
+
+                            </div>
+                        </div>
                         <li><Link className="link" to="/contact">Contact US</Link></li>
-                    </ul>
-                    <div className="center"><Link className="link" to="/">Unico Foods</Link></div>
+                    </oll>
+                    
                     <div className="right">
                         <TbSearch onClick={()=>setShowSearch(true)}/>
                         <Link className="link" to = {localStorage.user ? '/user' : '/login'}  ><AiOutlineUser/></Link>

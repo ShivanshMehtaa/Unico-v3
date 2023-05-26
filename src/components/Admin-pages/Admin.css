@@ -5,9 +5,11 @@
     min-height: 100vh;
     /* font-family: 'Poppins', sans-serif; */
 }
-.content{
-    margin-top: 10px;
+
+.content {
+    padding-top: 40px;
 }
+
 .admin-body a {
     text-decoration: none;
 }
@@ -25,9 +27,15 @@ h2 {
     color: #999;
 }
 
-.admin-boty .btn {
-    background: #3f47cc;
+.admin-body .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 30px;
+    background: #541a92;
     color: white;
+    font-size: 15px;
     padding: 5px 10px;
     text-align: center;
 }
@@ -59,7 +67,7 @@ td {
 
 .side-menu {
     position: fixed;
-    background: #3f47cc;
+    background: #541292;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -71,6 +79,14 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.side-menu .brand-name img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
 }
 
 .side-menu .brand-name h1 {
@@ -88,7 +104,7 @@ td {
 
 .side-menu li:hover {
     background: white;
-    color: #3f47cc;
+    color: #01efb0;
 }
 
 .admincontainer {

@@ -15,11 +15,30 @@ const Login = () => {
   const password = useRef("");
 
   const navigate = useNavigate();
+  var id = 0 ;
+  const allusers = async () => {
+    try {
+      console.log("hn hn chal rha hai ");
+      axios.get("http://localhost:8080/api/v1/user/readAllUser").then((res) => {
+        console.log(res.data.data);
+        var result = res.data.data;
+
+        id = result.length +1 ;
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    allusers();
+  }, []);
 
   const clickHandler = async (event) => {
     event.preventDefault();
     // navigate("/login");
     const data = {
+      userId : id ,
       firstName: firstName.current.value,
       lastName: lastName.current.value,
       email: email.current.value,

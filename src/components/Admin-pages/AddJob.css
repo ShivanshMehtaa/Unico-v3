@@ -153,8 +153,39 @@
   transition: all 0.3s;
 }
 
-.addjobwrapper .form .inputfield .btn:hover{
-  background: #3f47cc;
+.addjobwrapper .form .control-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addjobwrapper .form .inputfield .btn {
+  width: 100%;
+  /* padding: 8px 10px; */
+  height: 40px;
+  font-size: 15px;
+  border: 0px;
+  margin: 20px;
+  background: #f80f0f;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+  transition: all 0.3s;
+}
+.btn2{
+  background: rgb(5, 144, 5) !important ;
+}
+.addjobwrapper .form .inputfield .btn2:hover {
+  background: white !important ;
+  border: 2px solid black;
+  color: black;
+}
+
+.addjobwrapper .form .inputfield .btn:hover {
+  background: white;
+  border: 2px solid black;
+  color: black;
 }
 
 .addjobwrapper .form .inputfield:last-child{

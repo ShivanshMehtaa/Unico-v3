@@ -14,12 +14,34 @@ const AddJob = () => {
   const productImage = useRef("");
   const nutrition = useRef("");
   const productDescription = useRef("");
+  var id = 0;
+  const Allpro = async () => {
+    try {
+      console.log("hn hn chal rha hai ");
+      axios
+        .get("http://localhost:8080/api/v1/admin/readAllProduct")
+        .then((res) => {
+          console.log(res.data.data);
+          var result = res.data.data;
+
+          id = result.length + 1;
+          console.log("id = ", id);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    Allpro();
+  }, []);
 
   const clickHandler = async (e) => {
     // e.preventdefalut();
     console.log("hn click ho rha hai ");
+
     const data = {
-      productId: productId.current.value,
+      productId: id,
       productCategory: productCategory.current.value,
       productName: productName.current.value,
       price: price.current.value,
@@ -46,7 +68,7 @@ const AddJob = () => {
       console.log(error);
       alert("There is something wrong ");
     }
-    productId.current.value = "";
+    // productId.current.value = "";
     productCategory.current.value = "";
     productName.current.value = "";
     price.current.value = "";
@@ -63,10 +85,10 @@ const AddJob = () => {
       <div class="addjobwrapper">
         <div class="title">Add New Product</div>
         <div class="form">
-          <div class="inputfield">
+          {/* <div class="inputfield">
             <label>productId</label>
             <input ref={productId} type="text" class="input" />
-          </div>
+          </div> */}
           <div class="inputfield">
             <label>productCategory</label>
             <input ref={productCategory} type="text" class="input" />

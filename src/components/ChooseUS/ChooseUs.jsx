@@ -6,7 +6,7 @@ function Serive() {
   return (
     <div>
       <div className="choose-container">
-        <h2>Why Choose Us?</h2>
+        <h1>Why Choose Us?</h1>
         <Category2 />
         
       </div>

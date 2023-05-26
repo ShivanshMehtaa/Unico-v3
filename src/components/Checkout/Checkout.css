@@ -17,7 +17,7 @@
     align-items: center;
     padding: 25px;
     min-height: 100vh;
-    background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40.1%);
+    background: linear-gradient(90deg, hsla(189, 86%, 64%, 1) 0%, hsla(277, 67%, 77%, 1) 50%, hsla(218, 88%, 59%, 1) 100%);
 }
 
 .container form {
@@ -84,12 +84,13 @@
     width: 100%;
     padding: 12px;
     font-size: 17px;
-    background: #27ae60;
+    background: #70abfe;
     color: #fff;
     margin-top: 5px;
     cursor: pointer;
 }
 
 .container form .submit-btn:hover {
-    background: #2ecc71;
+    /* background: #2ecc71; */
+    transform: scale(101%);
 }

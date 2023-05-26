@@ -9,6 +9,16 @@ const Account = () => {
     localStorage.clear();
     Navigate('/')
   }
+
+  if (!localStorage.user) {
+    return (
+      <>
+        <li onClick={() => Navigate("/login")}>
+          &nbsp;<span>Please Login First</span>{" "}
+        </li>
+      </>
+    );
+  }
   return (
     <div>
       <section id="about-us">

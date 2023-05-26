@@ -2,8 +2,9 @@ import React from "react";
 import "./Admin.css";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import { Dashboard } from "./Dashboard";
+import unico from "../../assets/Unico.jpeg";
 // import Alljobs from "./Allcustomer";
 // import Allaplicant from "./UpdatePro";
 // import Alluser from "./Alluser";
@@ -22,12 +23,19 @@ const Admin = () => {
   const [applicantNo, setapplicantNo] = useState("");
   const [page, setPage] = useState("");
 
+  const Navigate = useNavigate();
+
   const clickHander = (event) => {
     console.log(event);
 
     setPage(event);
 
     console.log(page);
+  };
+
+  const clickHandler = () => {
+    localStorage.clear();
+    Navigate("/");
   };
 
   // useEffect(() => {
@@ -38,10 +46,23 @@ const Admin = () => {
   //   // setemployeeNo(employeeNo);
   // }, []);
 
+  if (!localStorage.user) {
+    return (
+      <>
+        <li onClick={() => Navigate("/login")}>
+          &nbsp;<span>Please Login First</span>{" "}
+        </li>
+      </>
+    );
+  }
+
   return (
     <div className="admin-body">
       <div class="side-menu">
         <div class="brand-name">
+          <Link to="/">
+            <img src={unico} alt="" />
+          </Link>
           <h1>Super Admin</h1>
         </div>
         <ul>
@@ -96,7 +117,7 @@ const Admin = () => {
               </button>
             </div>
             <div class="user">
-              <a href="/" class="btn">
+              <a class="btn" onClick={clickHandler}>
                 Logout
               </a>
             </div>

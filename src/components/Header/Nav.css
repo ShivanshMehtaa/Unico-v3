@@ -1,0 +1,137 @@
+.navbar {
+    background-color: #3f47CC;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    position: sticky;
+    width: 100%;
+
+    margin-bottom: 0 !important;
+    z-index: 20;
+
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    max-width: 1620px;
+}
+
+.logoimg {
+    width: 60px;
+    height: "auto";
+    padding-right: 20px;
+
+}
+
+.nav-logo {
+    color: #ffff;
+    align-items: center;
+    margin-left: 5px !important;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    flex-grow: 1;
+}
+
+.nav-logo:hover {
+
+    text-decoration: none;
+    color: white;
+}
+
+.nav-logo:visited {
+    color: #ffff;
+    text-decoration: none;
+
+
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin-right: 2rem;
+}
+
+.nav-links {
+    color: #ffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-links:visited {
+    color: #ffff;
+}
+
+.fa-code {
+    margin-left: 1rem;
+}
+
+.nav-item {
+    line-height: 40px;
+    margin-right: 1rem;
+}
+
+
+
+
+
+
+
+
+.nav-icon {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .nav-menu {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-top: 1pxsolid #fff;
+        position: absolute;
+        top: 80px;
+        left: -110%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-menu.active {
+        background-color: #3f47CC;
+        left: 0px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .nav-item .active {
+        color: #ffff;
+        border: none;
+    }
+
+    .nav-links {
+        padding: 1.5rem;
+        width: 100%;
+        display: table;
+    }
+
+    .nav-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #3472ac;
+    }
+}

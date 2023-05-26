@@ -1,7 +1,66 @@
 import React from 'react'
 import "./Checkout.css"
+import axios from "axios" 
+import Unico from "../../assets/Unico.jpeg"
+
+
 
 const Checkout = () => {
+   
+    const data = {amount : 4500}
+    const clickHandler = async(e)=>{
+         e.preventDefault();
+         var amount1 = ''
+        //  var id1 =''
+         var key1 =''
+        try {
+             axios.post("http://localhost:8080/api/v1/Payment/checkOut" ,{data:data}).then((res)=>{
+                console.log(res.data.data) 
+                amount1 = res.data.data.amount ;
+                console.log(amount1) ;
+               const  id1 = res.data.data.id ;
+                console.log(id1) ;
+                axios.get('http://localhost:8080/api/v1/Payment/getKey').then((res)=>{
+                key1 = res.data.key ;
+                console.log(key1) ;
+            })
+
+const options = {
+            key :key1  ,// Enter the Key ID generated from the Dashboard
+            amount: amount1, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            currency: "INR",
+            name: "Unico",
+            description : "Test Transaction",
+            image  : "https://media.licdn.com/dms/image/D4D0BAQE1RoLu3MGKQA/company-logo_200_200/0/1683434679314?e=2147483647&v=beta&t=L0jzHVX8uXR2yP7UDZQsD74gyizRQEZE7aG8ymFMF6c",
+            order_id: id1, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            callback_url: "http://localhost:8080/api/v1/Payment/paymentVarification",
+            prefill: {
+            name: "Gaurav Kumar", //login user ka name
+            email: "gaurav.kumar@example.com", //login user
+            contact: "9000090000" //login user
+    },
+            notes: {
+                 address: "Razorpay Corporate Office"
+            },
+            theme: {
+                color: "#3399cc"
+            }
+};
+var razor = new window.Razorpay(options);
+razor.open();
+            
+        
+
+})
+
+
+
+            
+        } catch (error) {
+            console.log(error) ;
+        }
+    }
+
   return (
     <div>
       <div class="container">
@@ -94,7 +153,7 @@ const Checkout = () => {
 
     </div> 
 
-    <input type="submit" value="proceed to checkout" class="submit-btn"/>
+    <input type="submit" onClick={clickHandler} value="proceed to checkout" class="submit-btn"/>
 
 </form>
 

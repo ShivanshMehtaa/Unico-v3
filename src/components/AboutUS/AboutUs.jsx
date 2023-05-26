@@ -15,14 +15,14 @@ const AboutUS = () => {
         <div className="text">
           {/* <h4>About Us</h4> */}
           <h1>
-          Ancient grains in a Modern food story
+          Ancient grains in a Modern food <br /> story
           </h1>
-          <div className="last-text">
-            <div className="text1">
+          <div className="last-text1">
+            <div className="text11">
               <h3>The best possible Ragi laddoos available in the planet</h3>
             </div>
           </div>
-          <div className="ctas">
+          <div className="ctas1">
             {/* <div className="banner-cta">About</div> */}
             <div className="banner-cta">Shop Now</div>
           </div>

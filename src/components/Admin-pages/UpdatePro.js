@@ -49,8 +49,11 @@ const UpdatePro = () => {
             <input ref={productStock} type="data" class="input" />
           </div>
 
-          <div class="inputfield" onClick={clickHandler}>
-            <input type="submit" value="Update Product" class="btn" />
+          <div className="control-buttons">
+            <div class="inputfield" onClick={clickHandler}>
+              <input type="submit" value="Remove Product" class="btn" />
+              <input type="submit" className="btn btn2" value="Add Product" />
+            </div>
           </div>
         </div>
       </div>
